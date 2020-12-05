@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".BuyVoucherFragment"
-    android:background="@drawable/background2">
+    android:background="@drawable/background2"
+    android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp">
+
         <TextView
             android:id="@+id/txtvoucher"
             android:layout_width="wrap_content"
@@ -20,78 +22,286 @@
             android:textColor="@android:color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
-        <com.google.android.material.button.MaterialButtonToggleGroup
-            android:id="@+id/toggleGroup"
+
+        <RadioGroup
+            android:id="@+id/radio_code"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
             android:layout_below="@id/txtvoucher"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            app:checkedButton="@id/btnAndroid"
-            app:singleSelection="true">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btnAndroid"
-                style="@style/IconOnlyButton"
-                android:layout_width="wrap_content"
+            <RadioButton
+                android:id="@+id/btn_QR"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:text="Android" />
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
+                android:paddingLeft="25dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="QR Code"
+                android:textColor="@drawable/text_color"
+                android:onClick="onCodeSelected"
+                tools:ignore="OnClick"
+                android:checked="true"/>
 
-            <Button
-                android:id="@+id/btniOS"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="wrap_content"
+            <RadioButton
+                android:id="@+id/btn_Bar"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:text="iOS" />
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
+                android:paddingLeft="25dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="Bar Code"
+                android:textColor="@drawable/text_color"
+                android:onClick="onCodeSelected"
+                tools:ignore="OnClick" />
+        </RadioGroup>
 
-        </com.google.android.material.button.MaterialButtonToggleGroup>
         <TextView
             android:id="@+id/txtprice"
-            android:layout_below="@id/toggleGroup"
-            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/radio_code"
+            android:layout_marginTop="5dp"
             android:text="Chọn mệnh giá"
             android:textColor="@android:color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
-        <GridView
-            android:id="@+id/price_selector"
-            android:layout_marginTop="8dp"
-            android:layout_below="@id/txtprice"
+
+        <RadioGroup
+            android:id="@+id/radio_price"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:numColumns="3"
-            android:layout_centerInParent="true"/>
+            android:layout_height="95dp"
+            android:layout_below="@id/txtprice"
+            android:layout_marginTop="10dp"
+            android:paddingVertical="3dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/btn_10k"
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dp"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
+                android:paddingLeft="25dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="10.000 đ"
+                android:textColor="@drawable/text_color"
+                android:textStyle="bold"
+                android:onClick="onPriceSelected"
+                tools:ignore="OnClick"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/btn_20k"
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="35dp"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="20.000 đ"
+                android:textAlignment="center"
+                android:textColor="@drawable/text_color"
+                android:textStyle="bold"
+                android:onClick="onPriceSelected"
+                tools:ignore="OnClick"/>
+
+            <RadioButton
+                android:id="@+id/btn_50k"
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="50.000 đ"
+                android:textAlignment="center"
+                android:textColor="@drawable/text_color"
+                android:textStyle="bold"
+                android:onClick="onPriceSelected"
+                tools:ignore="OnClick" />
+
+            <RadioButton
+                android:id="@+id/btn_100k"
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="-390dp"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="100.000 đ"
+                android:textAlignment="center"
+                android:textColor="@drawable/text_color"
+                android:textStyle="bold"
+                android:onClick="onPriceSelected"
+                tools:ignore="OnClick,RtlCompat" />
+
+            <RadioButton
+                android:id="@+id/btn_200k"
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginLeft="-390dp"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="200.000 đ"
+                android:textAlignment="center"
+                android:textColor="@drawable/text_color"
+                android:textStyle="bold"
+                android:onClick="onPriceSelected"
+                tools:ignore="OnClick,RtlCompat" />
+
+            <RadioButton
+                android:id="@+id/btn_500k"
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginLeft="-390dp"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="500.000 đ"
+                android:textAlignment="center"
+                android:textColor="@drawable/text_color"
+                android:textStyle="bold"
+                android:onClick="onPriceSelected"
+                tools:ignore="OnClick,RtlCompat" />
+
+        </RadioGroup>
+
         <TextView
             android:id="@+id/txtlabel"
-            android:layout_below="@id/price_selector"
-            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/radio_price"
+            android:layout_marginTop="10dp"
             android:text="Chọn nhãn hàng"
             android:textColor="@android:color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
-        <GridView
-            android:id="@+id/label_selector"
-            android:layout_marginTop="8dp"
-            android:layout_below="@id/txtlabel"
+
+        <RadioGroup
+            android:id="@+id/radio_label"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:numColumns="3"
-            android:layout_centerInParent="true"/>
+            android:layout_height="190dp"
+            android:layout_below="@id/txtlabel"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/btn_phuclong"
+                android:layout_width="105dp"
+                android:layout_height="75dp"
+                android:layout_marginLeft="1dp"
+                android:background="@drawable/radio_selector"
+                android:button="@drawable/phuclong"
+                android:elevation="4dp"
+                android:onClick="onLabelSelected"
+                tools:ignore="OnClick"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/btn_highlands"
+                android:layout_width="105dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="33dp"
+                android:background="@drawable/radio_selector"
+                android:button="@drawable/highlands"
+                android:elevation="4dp"
+                android:onClick="onLabelSelected"
+                tools:ignore="OnClick"/>
+
+            <RadioButton
+                android:id="@+id/btn_gongcha"
+                android:layout_width="105dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="33dp"
+                android:background="@drawable/radio_selector"
+                android:button="@drawable/gongcha"
+                android:elevation="4dp"
+                android:onClick="onLabelSelected"
+                tools:ignore="OnClick"/>
+
+            <RadioButton
+                android:id="@+id/btn_grab"
+                android:layout_width="105dp"
+                android:layout_height="75dp"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="-383dp"
+                android:background="@drawable/radio_selector"
+                android:button="@drawable/grab"
+                android:elevation="4dp"
+                android:onClick="onLabelSelected"
+                tools:ignore="OnClick"/>
+
+            <RadioButton
+                android:id="@+id/btn_sumo"
+                android:layout_width="105dp"
+                android:layout_height="75dp"
+                android:layout_gravity="bottom"
+                android:layout_marginHorizontal="33dp"
+                android:background="@drawable/radio_selector"
+                android:button="@drawable/sumo"
+                android:elevation="4dp"
+                android:onClick="onLabelSelected"
+                tools:ignore="OnClick" />
+
+            <RadioButton
+                android:id="@+id/btn_goviet"
+                android:layout_width="105dp"
+                android:layout_height="75dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/radio_selector"
+                android:button="@drawable/goviet"
+                android:elevation="4dp"
+                android:onClick="onLabelSelected"
+                tools:ignore="OnClick"/>
+
+        </RadioGroup>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_buy"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/label_selector"
+            android:layout_below="@id/radio_label"
             android:layout_centerInParent="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/button_green"
             android:text="Mua ngay"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
     </RelativeLayout>
 
-</FrameLayout>
+</LinearLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpFragment2">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/editTextSPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="12"
+            android:inputType="numberPassword"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:maxLines="1"
+            android:lines="1"
+            android:maxLength="12"
+            android:gravity="center_horizontal"
+            android:hint="@string/loginPassword"/>
+        <EditText
+            android:id="@+id/editTextSXNPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="12"
+            android:inputType="numberPassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:maxLines="1"
+            android:lines="1"
+            android:textSize="25dp"
+            android:maxLength="12"
+            android:layout_below="@id/editTextSPass"
+            android:hint="@string/confirmPassword"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
+        <Button
+            android:id="@+id/btnSComplete"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextSXNPass"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button"
+            android:textAllCaps="false"
+            android:paddingBottom="15dp"
+            android:textSize="27dp"
+            android:textColor="#FFFFFF"
+            android:text="@string/complete"
+            >
+        </Button>
+    </RelativeLayout>
+
+</FrameLayout>

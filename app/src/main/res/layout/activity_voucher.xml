@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VoucherActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:background="@drawable/ic_baseline_arrow_back_24"/>
+    <ImageView
+        android:id="@+id/voucher_background"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/colorPrimary"/>
+    <ImageView
+        android:id="@+id/voucher_logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@color/colorAccent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/voucher_background"
+        android:layout_marginTop="-40dp"/>
+    <LinearLayout
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/voucher_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="eGift - "
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/voucher_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sumo Voucher "
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/voucher_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="200.000đ"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp"
+        android:background="@drawable/box_date">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thời hạn sử dụng: "
+            android:textColor="#89B3E7"
+            android:textSize="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2/2/2021"
+            android:textColor="#89B3E7"
+            android:textSize="15dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@id/date"
+        android:layout_marginTop="10dp"
+        android:background="#CCCCCC"
+        android:orientation="horizontal" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/line"
+        android:layout_margin="10dp">
+        <TextView
+            android:id="@+id/noidung"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Nội dung:"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textAllCaps="true"/>
+        <TextView
+            android:id="@+id/noidung_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/noidung"
+            android:text="Sử dụng voucher này tới bất kì cửa hàng nào của chúng tôi"
+            android:textColor="#000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/noidung_text"
+            android:layout_marginTop="5dp"
+            android:text="Mã:"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textAllCaps="true"/>
+        <ImageView
+            android:id="@+id/qr_bar_code"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@color/colorPrimary"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

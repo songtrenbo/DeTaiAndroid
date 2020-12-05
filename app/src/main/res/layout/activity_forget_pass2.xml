@@ -8,7 +8,7 @@
     android:background="@drawable/background2">
 
     <EditText
-        android:id="@+id/editTextNhapMK"
+        android:id="@+id/edtFPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -17,20 +17,21 @@
         android:ems="12"
         android:gravity="center_horizontal"
         android:inputType="numberPassword"
-        android:hint="Nhập mật khẩu"
+        android:hint="Nhập lại mật khẩu"
         android:textSize="25dp"
         android:textAllCaps="false"
         android:textAlignment="center"
         android:maxLines="1"
         android:lines="1"
         android:paddingBottom="20dp"
-        android:maxLength="13"/>
+        android:maxLength="13"
+        />
     <EditText
-        android:id="@+id/editTextNhapLMK"
+        android:id="@+id/edtFXNPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/editTextNhapMK"
+        android:layout_below="@id/edtFPassword"
         android:layout_marginTop="8dp"
         android:layout_weight="1"
         android:ems="12"
@@ -46,18 +47,20 @@
         android:maxLength="13"
         />
     <Button
-        android:id="@+id/buttonXacThuc"
+        android:id="@+id/btnFXacNhan"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextNhapLMK"
+        android:layout_below="@+id/edtFXNPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:background="@drawable/button"
-        android:text="Xác thực"
+        android:text="Xác nhận"
         android:textAllCaps="false"
         android:paddingBottom="15dp"
         android:textSize="27dp"
         android:textColor="#FFFFFF"
         />
+
+
 
 </RelativeLayout>

@@ -5,126 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
+    android:orientation="vertical"
     android:background="@drawable/background2">
 
 
-        <LinearLayout
-            android:id="@+id/head"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="60dp">
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:src="@drawable/logo"
-                android:layout_gravity="center"
-                />
-            <LinearLayout
-                android:layout_width="320dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                >
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/dangnhap"
-                            android:layout_width="160dp"
-                            android:layout_height="50dp"
-                            android:text="Đăng nhập"
-                            android:textColor="#000000"
-                            android:textSize="30dp">
-
-                        </TextView>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        >
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="50dp"
-                            android:text="Đăng ký"
-                            android:textAllCaps="false"
-                            android:textColor="#000000"
-                            android:textSize="30dp"
-                            android:fontFamily="sans-serif-thin">
-
-                        </TextView>
-                    </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-
-
-    <EditText
-        android:id="@+id/editTextNhapSDT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/imgLogin"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/logo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
-        android:layout_weight="1"
-        android:ems="12"
-        android:gravity="center_horizontal"
-        android:inputType="numberSigned"
-        android:hint="Nhập số điện thoại"
-        android:textSize="25dp"
-        android:textAllCaps="false"
-        android:textAlignment="center"
-        android:maxLines="1"
-        android:lines="1"
-        android:paddingBottom="20dp"
-        android:maxLength="13"/>
-    <EditText
-        android:id="@+id/editTextNhapMK"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextNhapSDT"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:layout_weight="1"
-        android:ems="12"
-        android:gravity="center_horizontal"
-        android:inputType="numberPassword"
-        android:hint="Nhập mật khẩu"
-        android:textSize="25dp"
-        android:textAllCaps="false"
-        android:textAlignment="center"
-        android:paddingBottom="20dp"
-        android:maxLines="1"
-        android:lines="1"
-        android:maxLength="10"/>
+        android:layout_marginTop="50dp"/>
 
-    <Button
-        android:id="@+id/buttonDangNhap"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextNhapMK"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/button"
-        android:text="Đăng nhập"
-        android:textAllCaps="false"
-        android:paddingBottom="15dp"
-        android:textSize="27dp"
-        android:textColor="#FFFFFF"
-        />
-    <TextView
-        android:id="@+id/textviewQuenMK"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_below="@id/buttonDangNhap"
-        android:layout_marginTop="40dp"
-        android:layout_centerHorizontal="true"
-        android:text="Quên mật khẩu?"
-        android:textAllCaps="false"
-        android:textColor="#0085FF"
-        android:textSize="17dp">
-    </TextView>
-    />
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLogin"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:tabTextAppearance="@style/MyCustomTabText"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/imgLogin"
+        android:layout_marginTop="40dp">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabItem1"
+            android:text="@string/login"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:textColor="#000000"
+            android:textSize="30dp"
+            />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabItem2"
+            android:text="@string/signUp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="30dp"/>
+    </com.google.android.material.tabs.TabLayout>
+
+    <include layout="@layout/login_container"
+        android:layout_below="@id/tabLogin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="40dp"/>
+
+
 </RelativeLayout>
